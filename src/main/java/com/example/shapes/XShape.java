@@ -1,9 +1,13 @@
+package com.example.shapes;
+
 import java.awt.*;
 
-public class XShape extends Shape{
+import com.example.logo.Turtle;
+
+public class XShape extends Shape {
     private int width;
     private int height;
-    XShape(Turtle turtle,int xPosition,int yPosition,String colorName,int borderWidth, int width, int height){
+    XShape(Turtle turtle, int xPosition, int yPosition, String colorName, int borderWidth, int width, int height){
         super( turtle, xPosition, yPosition, colorName, borderWidth);
         this.width = width;
         this.height = height;

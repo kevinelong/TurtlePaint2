@@ -1,3 +1,7 @@
+package com.example.demo;
+
+import com.example.logo.*;
+import com.example.shapes.*;
 import java.util.Scanner;
 
 public class MainApp {
@@ -28,7 +32,7 @@ public class MainApp {
         return i;
     }
     public static void addSquare(){
-        System.out.println("Adding Square");
+        System.out.println("Adding com.example.shapes.Square");
         int width = promptInt("Side Length", 50);
 
         int borderWidth = promptInt("Border Width", 5);
@@ -40,7 +44,7 @@ public class MainApp {
         s.draw();
     }
     public static void addCircle(){
-        System.out.println("Adding Circle");
+        System.out.println("Adding shapes.Circle");
         int width = promptInt("Radius", 25);
 
         int borderWidth = promptInt("Border Width", 5);
@@ -52,7 +56,7 @@ public class MainApp {
         s.draw();
     }
     public static void addTriangle(){
-        System.out.println("Adding Triangle");
+        System.out.println("Adding com.example.shapes.Triangle");
         int width = promptInt("Side Length", 50);
 
         int borderWidth = promptInt("Border Width", 5);
@@ -67,7 +71,7 @@ public class MainApp {
         System.out.println("ADD SHAPE MENU");
         int choice = -1;
         while (choice != 0) {
-            System.out.println("1) - Square \n 2) - Circle \n 3) - Triangle \n 0) - Back to Main");
+            System.out.println("1) - com.example.shapes.Square \n 2) - shapes.Circle \n 3) - com.example.shapes.Triangle \n 0) - Back to Main");
             choice = promptInt("Enter choice", 1);
             switch (choice) {
                 case 0:
@@ -120,14 +124,14 @@ public class MainApp {
 
         System.out.println("BYE BYE");
 //        var list = Stream.of(
-//                new Square(turtle, -100, 0, "GREEN", 6, 100),
-//                new Triangle(turtle, 0, 0, "BLACK", 6, 100),
-//                new Circle(turtle, 100, 0, "MAGENTA", 6, 100)
+//                new com.example.shapes.Square(turtle, -100, 0, "GREEN", 6, 100),
+//                new com.example.shapes.Triangle(turtle, 0, 0, "BLACK", 6, 100),
+//                new shapes.Circle(turtle, 100, 0, "MAGENTA", 6, 100)
 //        );
-//        list.forEach(Shape::draw);
+//        list.forEach(com.example.shapes.Shape::draw);
 
 //
-//        Shape s1 = new XShape(turtle, -200,0,"GREEN", 6, 100, 100);
+//        com.example.shapes.Shape s1 = new com.example.shapes.XShape(turtle, -200,0,"GREEN", 6, 100, 100);
 //        s1.draw();
     }
 }

@@ -1,8 +1,10 @@
-import java.awt.*;
+package com.example.shapes;
+import com.example.logo.Turtle;
 
-public class Square extends Shape{
+
+public class Square extends Shape {
     private int width;
-    Square(Turtle turtle, int xPosition, int yPosition, String colorName, int borderWidth, int width){
+    public Square(Turtle turtle, int xPosition, int yPosition, String colorName, int borderWidth, int width){
         super( turtle, xPosition, yPosition, colorName, borderWidth);
         this.width = width;
     }

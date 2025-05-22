@@ -1,8 +1,11 @@
-import java.awt.*;
+package com.example.shapes;
+
+
+import com.example.logo.Turtle;
 
 public class Circle extends Shape{
     private int width;
-    Circle(Turtle turtle, int xPosition, int yPosition, String colorName, int borderWidth, int width){
+    public Circle(Turtle turtle, int xPosition, int yPosition, String colorName, int borderWidth, int width){
         super( turtle, xPosition, yPosition, colorName, borderWidth);
         this.width = width;
     }

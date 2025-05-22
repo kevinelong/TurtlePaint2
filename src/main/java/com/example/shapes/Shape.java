@@ -1,6 +1,10 @@
+package com.example.shapes;
+
+import com.example.logo.Turtle;
+
 import java.awt.*;
 
-abstract class Shape implements IDrawable {
+public abstract class Shape implements IDrawable {
     //    turtle: the turtle that is used to paint the shape
     protected Turtle turtle;
 
@@ -25,7 +29,7 @@ abstract class Shape implements IDrawable {
         turtle.setPenWidth(borderWidth);
         turtle.penDown();
     }
-    public Shape(Turtle turtle,int xPosition,int yPosition,String colorName,int borderWidth){
+    public Shape(Turtle turtle, int xPosition, int yPosition, String colorName, int borderWidth){
         //Note no height, width, or radius as not all shapes have these.
         this.turtle = turtle;
         this.xPosition = xPosition;
