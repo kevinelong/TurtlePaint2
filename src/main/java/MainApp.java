@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.stream.Stream;
 
 public class MainApp
 {
@@ -11,7 +12,15 @@ public class MainApp
         World world = new World(400, 400);
         Turtle turtle = new Turtle(world,-100, -100);
 
-        Shape s1 = new XShape(turtle, 0,0,"GREEN", 6, 200, 200);
-        s1.draw();
+        var list = Stream.of(
+                new Square(turtle, -100,0,"GREEN", 6, 100),
+                new Triangle(turtle, 0,0,"BLACK", 6, 100),
+                new Circle(turtle, 100,0,"MAGENTA", 6, 100)
+        );
+        list.forEach(Shape::draw);
+
+//
+//        Shape s1 = new XShape(turtle, -200,0,"GREEN", 6, 100, 100);
+//        s1.draw();
     }
 }

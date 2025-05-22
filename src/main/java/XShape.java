@@ -10,13 +10,7 @@ public class XShape extends Shape{
     }
     @Override
     public void draw() {
-        turtle.penUp();
-        turtle.goTo(xPosition, yPosition);
-        turtle.setPenWidth(borderWidth);
-        turtle.penDown();
-
-//        super.draw();
-        //DRAW AN X
+        super.draw();
 
         // calculate the hypotenuse (diagonal)
         // a2 + b2 = c2
