@@ -1,8 +1,9 @@
-import java.awt.*;
-import java.util.stream.Stream;
 import java.util.Scanner;
 
 public class MainApp {
+    private static Turtle turtle;
+    private static World world;
+
     public static String prompt(String message, String defaultValue) {
         Scanner scanner = new Scanner(System.in);
         String name = "";
@@ -26,11 +27,67 @@ public class MainApp {
         }
         return i;
     }
-    public static void add(){
-        System.out.println("ADDING...");
+    public static void addSquare(){
+        System.out.println("Adding Square");
+        int width = promptInt("Side Length", 50);
+
+        int borderWidth = promptInt("Border Width", 5);
+        int x = promptInt("horizontal x position", 0);
+        int y = promptInt("vertical y position", 0);
+        String color = prompt("Color", "green");
+
+        Shape s = new Square(turtle, x,y, color, borderWidth, width);
+        s.draw();
+    }
+    public static void addCircle(){
+        System.out.println("Adding Circle");
+        int width = promptInt("Radius", 25);
+
+        int borderWidth = promptInt("Border Width", 5);
+        int x = promptInt("horizontal x position", 0);
+        int y = promptInt("vertical y position", 0);
+        String color = prompt("Color", "green");
+
+        Shape s = new Circle(turtle, x,y, color, borderWidth, width);
+        s.draw();
+    }
+    public static void addTriangle(){
+        System.out.println("Adding Triangle");
+        int width = promptInt("Side Length", 50);
+
+        int borderWidth = promptInt("Border Width", 5);
+        int x = promptInt("horizontal x position", 0);
+        int y = promptInt("vertical y position", 0);
+        String color = prompt("Color", "green");
+
+        Shape s = new Triangle(turtle, x,y, color, borderWidth, width);
+        s.draw();
+    }
+    public static void shapeMenu(){
+        System.out.println("ADD SHAPE MENU");
+        int choice = -1;
+        while (choice != 0) {
+            System.out.println("1) - Square \n 2) - Circle \n 3) - Triangle \n 0) - Back to Main");
+            choice = promptInt("Enter choice", 1);
+            switch (choice) {
+                case 0:
+                    return;
+                case 2:
+                    addCircle();
+                    break;
+                case 3:
+                    addTriangle();
+                    break;
+                default: // 1) - Add
+                    addSquare();
+            }
+        }
     }
     public static void save(){
         System.out.println("SAVING...");
+        String directory = System.getProperty("user.dir");
+        String fileName = prompt("File Name", "myfile.png");
+        world.saveAs(directory + "/" + fileName);
     }
     public static void mainMenu(){
         int choice = -1;
@@ -44,7 +101,7 @@ public class MainApp {
                     save();
                     break;
                 default: // 1) - Add
-                    add();
+                    shapeMenu();
             }
         }
     }
@@ -56,8 +113,8 @@ public class MainApp {
         int size = promptInt("Size", 400);
 
         // The world is your canvas
-        World world = new World(size, size);
-        Turtle turtle = new Turtle(world, size * -0.5, size * -0.5);
+        world = new World(size, size);
+        turtle = new Turtle(world, size * -0.5, size * -0.5);
 
         mainMenu();
 
